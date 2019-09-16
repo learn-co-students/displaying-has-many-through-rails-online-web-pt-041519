@@ -1,9 +1,7 @@
 <h2><%= @post.title %></h2>
-<p>
-  Content: <%= @post.content %>
-</p>
-Comments:
-  <% @post.comments.each do |comment| %>
-    <%= link_to comment.user.username, user_path(comment.user) %> said
-    <%= comment.content %>
-  <% end %>
+<h2><%= @user.username %> </h2> has commented on the following posts:
+ 
+<% @user.posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %>
+<% end %>
+
